@@ -1,0 +1,10 @@
+.DS_Store
+.vscode
+.idea
+.tmp
+.env
+Thumbs.db
+coverage
+npm-debug.log
+node_modules
+dist
