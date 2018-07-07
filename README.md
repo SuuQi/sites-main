@@ -3,3 +3,11 @@
 
 refs/heads/master
 refs/heads/testing
+
+
+## todo
+
+* tslint
+* egg
+* graphQL
+* antd

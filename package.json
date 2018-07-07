@@ -14,8 +14,10 @@
     "dist": "concurrently --kill-others-on-fail -p \"[{name}]\" -n \"dist-ts,client-prod,webpack\" -c \"cyan.bold,green.bold,yellow.bold\" \"npm run dist-ts\" \"npm run client-prod\" \"npm run webpack\""
   },
   "keywords": [
+    "koa",
     "egg",
     "react",
+    "graphQL",
     "typescript"
   ],
   "author": "hzsuqin@corp.netease.com",
