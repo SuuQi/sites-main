@@ -14,10 +14,10 @@ export * from '../../common/config';
  */
 export const ROOT = path.join(__dirname, '../../');
 
-// 数据库
+// 默认的数据库
 export const MONGODB_URI = 'mongodb://localhost/sites-main-dev';
 
-// 服务器监听端口
+// 默认的服务器监听端口
 export const PORT = 9000;
 
 // export const SERVER_HOST = 'http://10.241.0.91:62553/';

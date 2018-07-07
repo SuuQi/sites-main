@@ -1,0 +1,10 @@
+{
+    "name": "sites-main",
+    "script": "dist/server/index.js",
+    "max_memory_restart": "512M",
+    "env": {
+        "NODE_ENV": "production",
+        "MONGODB_URI": "mongodb://localhost/sites-main",
+        "PORT": "9004"
+    }
+}
