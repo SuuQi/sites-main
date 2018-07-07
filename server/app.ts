@@ -8,12 +8,8 @@
 
 import path from 'path';
 import Koa from 'koa';
-import mount from 'koa-mount';
 import mongoose from 'mongoose';
-import { OpenIDAuthBackend } from '@pangu/openid-auth-backend';
 import config from './config';
-import { AUTH_LIST, ROLE_CONFIG } from './service/auth';
-import { proxy } from './service/proxy';
 
 /** koa实例 */
 const app = new Koa();
@@ -22,17 +18,6 @@ const app = new Koa();
 mongoose.Promise = Promise;
 mongoose.connect(config.MONGODB_URI, {});
 mongoose.connection.on('error', () => console.error('数据库连接错误。'));
-
-// 开始初始化权限权限后台
-const backendPrefix = '/backend';
-const backend = new OpenIDAuthBackend({
-    roleConfig: ROLE_CONFIG,
-    authList: AUTH_LIST,
-    routerPrefix: backendPrefix
-});
-backend.init(mongoose);
-// 挂载权限管理后台
-app.use(mount(backendPrefix, backend.app));
 
 // 调用一些中间件
 app.use(require('koa-logger')());
@@ -45,11 +30,6 @@ app.use(require('koa-better-body')({
 app.use(require('koa-static')(path.join(config.ROOT, 'client'), {
     maxage: 1000 * 60 * 10
 }));
-
-// 初始化代理方法
-app.context.proxy = proxy({
-    target: config.SERVER_HOST
-});
 
 // 添加路由和错误处理
 const router = require('./router').default;

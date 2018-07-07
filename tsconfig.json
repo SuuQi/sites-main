@@ -9,6 +9,10 @@
         "outDir": "dist",
         "experimentalDecorators": true,
         "baseUrl": ".",
+        "lib": [
+            "es6",
+            "es7"
+        ],
         "paths": {
             "*": [
                 "node_modules/*",

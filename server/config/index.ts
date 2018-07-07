@@ -6,6 +6,9 @@
  * @description: 服务端config配置入口文件
  */
 
+/** 导出所有前后端公共配置 */
+export * from '../../common/config';
+
 import * as Const from './const';
 
 export default Object.assign({}, Const, process.env);

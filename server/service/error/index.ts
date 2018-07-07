@@ -7,7 +7,6 @@
  */
 
 import fs from 'fs';
-import _ from 'lodash';
 import createError from 'http-errors';
 import config from '../../config';
 

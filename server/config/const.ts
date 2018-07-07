@@ -15,12 +15,10 @@ export * from '../../common/config';
 export const ROOT = path.join(__dirname, '../../');
 
 // 数据库
-export const MONGODB_URI = 'mongodb://localhost/pangu-kun-ui-dev';
+export const MONGODB_URI = 'mongodb://localhost/sites-main-dev';
 
 // 服务器监听端口
 export const PORT = 9000;
 
-// 运行环境
-export const SERVER_HOST = 'http://gateway.pgpp-pangu-kun-pgpp-unstable.cube-dg.nie.netease.com';
 // export const SERVER_HOST = 'http://10.241.0.91:62553/';
 
