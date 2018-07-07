@@ -1,0 +1,25 @@
+{
+    "compilerOptions": {
+        "target": "es5",
+        "module": "commonjs",
+        "moduleResolution": "node",
+        "declaration": false,
+        "noImplicitAny": false,
+        "sourceMap": true,
+        "jsx": "react",
+        "noLib": false,
+        "suppressImplicitAnyIndexErrors": true,
+        "experimentalDecorators": true,
+        "baseUrl": ".",
+        "paths": {
+            "Config/*": [ "config/*" ],
+            "Components/*": [ "components/*" ],
+            "Pages/*": [ "pages/*" ],
+            "Utils/*": [ "utils/*" ]
+        }
+    },
+    "compileOnSave": false,
+    "exclude": [
+        "node_modules"
+    ]
+}
