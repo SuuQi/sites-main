@@ -97,6 +97,7 @@ module.exports = {
             Common: path.join(__dirname, '../common'),
             Config: path.join(__dirname, '../client/config'),
             Components: path.join(__dirname, '../client/components'),
+            Pages: path.join(__dirname, '../client/pages'),
             Utils: path.join(__dirname, '../client/utils')
         },
         extensions: ['.ts', '.tsx', '.js', '.jsx', '.json']

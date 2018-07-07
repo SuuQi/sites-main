@@ -9,7 +9,7 @@
 import * as React from 'react';
 import { render } from 'react-dom';
 
-import Home from './pages/Home';
+import Home from 'Pages/Home';
 
 // 渲染页面
 render(
