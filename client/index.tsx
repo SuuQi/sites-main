@@ -1,7 +1,7 @@
 /*
  * @Author: hzsuqin 
  * @Date: 2018-07-07 17:17:10 
- * @Last Modified by: hzsuqin@corp.netease.com
+ * @Last Modified by: hzsuqin
  * @Last Modified time: 2018-07-07 10:53:00
  * @description: 前端主入口文件
  */

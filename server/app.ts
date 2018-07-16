@@ -1,7 +1,7 @@
 /*
  * @Author: hzsuqin 
  * @Date: 2018-05-28 14:58:40 
- * @Last Modified by: hzsuqin@corp.netease.com
+ * @Last Modified by: hzsuqin
  * @Last Modified time: 2018-05-28 17:19:19
  * @description app实例初始化文件
  */

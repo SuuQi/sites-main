@@ -1,7 +1,7 @@
 /*
  * @Author: hzsuqin 
  * @Date: 2018-07-07 09:41:45 
- * @Last Modified by: hzsuqin@corp.netease.com
+ * @Last Modified by: hzsuqin
  * @Last Modified time: 2018-07-07 20:14:38
  * @description: redux action相关的utils
  */

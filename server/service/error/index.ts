@@ -1,7 +1,7 @@
 /*
  * @Author: hzsuqin 
  * @Date: 2018-05-28 14:57:35 
- * @Last Modified by: hzsuqin@corp.netease.com
+ * @Last Modified by: hzsuqin
  * @Last Modified time: 2018-05-28 20:43:22
  * @description: error中间件集合文件
  */

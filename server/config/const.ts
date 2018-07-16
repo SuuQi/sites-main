@@ -1,7 +1,7 @@
 /*
  * @Author: hzsuqin 
  * @Date: 2018-05-28 16:31:25 
- * @Last Modified by: hzsuqin@corp.netease.com
+ * @Last Modified by: hzsuqin
  * @Last Modified time: 2018-06-29 10:57:41
  * @description: 服务端config的一些const
  */
