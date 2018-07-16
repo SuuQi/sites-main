@@ -20,7 +20,7 @@
     "graphQL",
     "typescript"
   ],
-  "author": "hzsuqin@corp.netease.com",
+  "author": "hzsuqin",
   "dependencies": {
     "@types/http-errors": "^1.6.1",
     "@types/koa": "^2.0.45",
