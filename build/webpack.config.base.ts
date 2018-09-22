@@ -2,6 +2,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const HappyPack = require('happypack');
+const happyThreadPool = HappyPack.ThreadPool({ size: 5 });
 
 module.exports = {
     context: path.join(__dirname, '../client'),
@@ -54,7 +55,7 @@ module.exports = {
     plugins: [
         new HappyPack({
             id: 'js',
-            threads: 4,
+            threadPool: happyThreadPool,
             loaders: [{
                 loader: 'ts-loader',
                 options: {
@@ -66,7 +67,7 @@ module.exports = {
         }),
         new HappyPack({
             id: 'less',
-            threads: 2,
+            threadPool: happyThreadPool,
             loaders: [
                 'style-loader',
                 'css-loader',
@@ -79,7 +80,7 @@ module.exports = {
         }),
         new HappyPack({
             id: 'css',
-            threads: 2,
+            threadPool: happyThreadPool,
             loaders: ['style-loader', 'css-loader']
         }),
         new HtmlWebpackPlugin({
