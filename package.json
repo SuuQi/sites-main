@@ -10,7 +10,7 @@
     "dist-ts": "tsc",
     "client-dev": "node ./build/development.ts",
     "client-prod": "node ./build/production.ts",
-    "webpack": "node --max_old_space_size=2048 node_modules/webpack/bin/webpack.js --config ./build/webpack.config.prod.ts",
+    "webpack": "webpack --config ./build/webpack.config.prod.ts",
     "dist": "concurrently --kill-others-on-fail -p \"[{name}]\" -n \"dist-ts,client-prod,webpack\" -c \"cyan.bold,green.bold,yellow.bold\" \"npm run dist-ts\" \"npm run client-prod\" \"npm run webpack\""
   },
   "keywords": [

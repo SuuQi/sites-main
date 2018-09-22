@@ -1,7 +1,7 @@
 {
     "name": "sites-main-test",
     "script": "dist/server/index.js",
-    "max_memory_restart": "256M",
+    "max_memory_restart": "100M",
     "env": {
         "NODE_ENV": "test",
         "MONGODB_URI": "mongodb://localhost/sites-main-test",
