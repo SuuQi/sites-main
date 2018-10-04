@@ -2,7 +2,7 @@
  * @Author: hzsuqin 
  * @Date: 2018-05-27 09:54:24 
  * @Last Modified by: hzsuqin
- * @Last Modified time: 2018-06-25 16:51:37
+ * @Last Modified time: 2018-10-04 10:45:37
  * @description: redux reducer相关的utils
  */
 
@@ -66,7 +66,7 @@ export function defaultSuccess (state, action) {
  * @param {any} action 
  * @returns {Object} newState
  */
-export function defaultSuccessNoData (state, action) {
+export function defaultSuccessNoData (state) {
     return { ...state, isFetching: false };
 }
 
