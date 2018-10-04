@@ -7,7 +7,7 @@
     "dist": "npm run client-dist-assets && npm run client-dist-webpack && npm run server-dist",
     "client-dev": "node ./build/development.js",
     "client-dist-assets": "node ./build/production.js",
-    "client-dist-webpack": "node --max_old_space_size=512 node_modules/webpack/bin/webpack.js --config ./build/webpack.config.prod.js",
+    "client-dist-webpack": "webpack --config ./build/webpack.config.prod.js",
     "server-dev": "egg-bin dev -r egg-ts-helper/register --port=9000 --ts",
     "server-dist": "ets && tsc -p tsconfig.json",
     "debug": "egg-bin debug -r egg-ts-helper/register",
