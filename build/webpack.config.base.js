@@ -1,7 +1,9 @@
+const webpack = require('webpack');
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const webpack = require('webpack');
 const HappyPack = require('happypack');
+const os = require('os');
+const happyThreadPool = HappyPack.ThreadPool({ size: os.cpus().length });
 
 module.exports = {
     context: path.join(__dirname, '../client'),
@@ -20,11 +22,7 @@ module.exports = {
     module: {
         rules: [
             {
-                test: /\.css$/,
-                use: 'happypack/loader?id=css'
-            },
-            {
-                test: /\.less$/,
+                test: /\.(less|css)$/,
                 use: 'happypack/loader?id=less'
             },
             {
@@ -54,7 +52,7 @@ module.exports = {
     plugins: [
         new HappyPack({
             id: 'js',
-            threads: 4,
+            threadPool: happyThreadPool,
             loaders: [{
                 loader: 'ts-loader',
                 options: {
@@ -66,7 +64,7 @@ module.exports = {
         }),
         new HappyPack({
             id: 'less',
-            threads: 2,
+            threadPool: happyThreadPool,
             loaders: [
                 'style-loader',
                 'css-loader',
@@ -76,11 +74,6 @@ module.exports = {
                 },
                 'less-loader'
             ]
-        }),
-        new HappyPack({
-            id: 'css',
-            threads: 2,
-            loaders: ['style-loader', 'css-loader']
         }),
         new HtmlWebpackPlugin({
             filename: 'index.ejs',
