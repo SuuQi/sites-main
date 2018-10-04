@@ -26,7 +26,7 @@ export default () => async function errorHandler (ctx, next) {
             // 404也交由前端实现
             // 其他路由都返回首页
             // 为防止出现错误日志，直接退出函数
-            await ctx.render('index.ejs', { game: 'pm02' });
+            await ctx.render('index.ejs');
             return;
         } else {
             ctx.body = err.message || err.stack

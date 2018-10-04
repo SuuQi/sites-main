@@ -2,18 +2,10 @@
 // Do not modify this file!!!!!!!!!
 
 import 'egg'; // Make sure ts to import egg declaration at first
-import Auth from '../../../app/controller/auth';
-import Code from '../../../app/controller/code';
-import Flag from '../../../app/controller/flag';
-import GameSettings from '../../../app/controller/gameSettings';
-import Unisdk from '../../../app/controller/unisdk';
+import Hello from '../../../app/controller/hello';
 
 declare module 'egg' {
   interface IController {
-    auth: Auth;
-    code: Code;
-    flag: Flag;
-    gameSettings: GameSettings;
-    unisdk: Unisdk;
+    hello: Hello;
   }
 }

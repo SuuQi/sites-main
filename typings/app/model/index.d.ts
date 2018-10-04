@@ -2,14 +2,10 @@
 // Do not modify this file!!!!!!!!!
 
 import 'egg'; // Make sure ts to import egg declaration at first
-import Flag from '../../../app/model/flag';
-import Settings from '../../../app/model/settings';
-import Unisdk from '../../../app/model/unisdk';
+import Hello from '../../../app/model/hello';
 
 declare module 'egg' {
   interface IModel {
-    Flag: ReturnType<typeof Flag>;
-    Settings: ReturnType<typeof Settings>;
-    Unisdk: ReturnType<typeof Unisdk>;
+    Hello: ReturnType<typeof Hello>;
   }
 }

@@ -2,7 +2,7 @@
  * @Author: hzsuqin 
  * @Date: 2018-05-27 17:21:23 
  * @Last Modified by: hzsuqin
- * @Last Modified time: 2018-10-04 10:49:47
+ * @Last Modified time: 2018-10-04 11:04:06
  * @description: 路由配置文件
  */
 
@@ -16,6 +16,12 @@ export const reducers = {
 export default [
     {
         path: '/',
+        component: Home,
+        exact: true,
+        title: 'Home'
+    },
+    {
+        path: '/home',
         component: Home,
         title: 'Home'
     }

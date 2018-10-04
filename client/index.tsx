@@ -2,7 +2,7 @@
  * @Author: hzsuqin 
  * @Date: 2018-05-27 17:17:10 
  * @Last Modified by: hzsuqin
- * @Last Modified time: 2018-10-04 10:52:48
+ * @Last Modified time: 2018-10-04 11:01:31
  * @description: 前端主入口文件
  */
 
@@ -23,10 +23,12 @@ const store = createStore( combineReducers(reducers), {}, applyMiddleware(thunkM
 render(
     <Provider store={store}>
         <Router>
-            {
-                // 遍历路由配置创建视图
-                routes.map((route, i) => <RouteWithSubRoutes key={i} {...route} />)
-            }
+            <div className="router">
+                {
+                    // 遍历路由配置创建视图
+                    routes.map((route, i) => <RouteWithSubRoutes key={i} {...route} />)
+                }
+            </div>
         </Router>
     </Provider>,
     document.getElementById('app')
