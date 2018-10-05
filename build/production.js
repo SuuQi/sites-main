@@ -6,3 +6,4 @@ shell.rm('-rf', 'dist/client');
 shell.mkdir('-p', 'dist/client/public/assets');
 shell.cp('-R', 'client/assets', 'dist/client/public');
 shell.cp('package*.json', 'dist/');
+shell.cp('build/*.sh', 'dist/');
