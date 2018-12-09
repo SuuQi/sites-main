@@ -17,7 +17,7 @@ export default (appInfo: EggAppInfo) => {
 
     config.mongoose = {
         client: {
-            url: MONGODB_URI || process.env.MONGODB_URI,
+            url: Const.MONGODB_URI || MONGODB_URI,
             options: {}
         }
     };

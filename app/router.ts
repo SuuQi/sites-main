@@ -1,6 +1,13 @@
 import { Application } from 'egg';
-import { Blueprint } from 'egg-router-decorator';
+import { initRouter } from 'egg-router-decorator';
 
 export default (app: Application) => {
-    Blueprint(app, { prefix: '/api' });
+    const { router } = app;
+
+    // 主页面，非/api开头
+    router.get(/^(?!\/api).+$/, async (ctx) => {
+        await ctx.render('index.ejs');
+    });
+
+    initRouter(app, { prefix: '/api' });
 };

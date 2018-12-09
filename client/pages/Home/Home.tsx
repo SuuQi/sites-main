@@ -15,7 +15,7 @@ class Home extends React.Component {
     render () {
         return (
             <div className="home">
-                <Link to="/docView/start">查看使用说明</Link>
+                <Link to="/docView/start">测试路由</Link>
             </div>
         );
     }

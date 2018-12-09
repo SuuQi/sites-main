@@ -15,7 +15,7 @@
     "test": "npm run lint --fix && npm run test-local",
     "lint": "tslint --project . -c tslint.json",
     "clean": "ets clean",
-    "start": "egg-scripts start --daemon --title=pangu-sites-main --port=9000",
+    "start": "egg-scripts start --daemon --title=pangu-sites-main --port=9000 –workers=2",
     "stop": "egg-scripts stop --title=pangu-sites-main"
   },
   "engines": {
@@ -29,7 +29,7 @@
   "dependencies": {
     "egg": "^2.6.1",
     "egg-mongoose": "^3.1.0",
-    "egg-router-decorator": "^1.0.0",
+    "egg-router-decorator": "^2.0.0",
     "egg-scripts": "^2.6.0",
     "egg-view-ejs": "^2.0.0",
     "koa-compose": "^4.1.0",

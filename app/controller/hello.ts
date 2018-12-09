@@ -6,16 +6,16 @@
  */
 
 import { Controller } from 'egg';
-import { bp } from 'egg-router-decorator';
+import routerDecorator from 'egg-router-decorator';
 
-bp.prefix('/hello', 'HelloController')
+@routerDecorator.prefix('/hello')
 export default class HelloController extends Controller {
 
     /**
      * hello index接口
      * @memberof HelloController
      */
-    @bp.get('/')
+    @routerDecorator.get('/')
     public async index () {
         const { ctx } = this;
         ctx.body = 'hello';

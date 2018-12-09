@@ -22,7 +22,6 @@
         "noFallthroughCasesInSwitch": true,
         "skipLibCheck": true,
         "skipDefaultLibCheck": true,
-        "inlineSourceMap": true,
         "importHelpers": true,
         "baseUrl": ".",
         "paths": {
