@@ -18,7 +18,7 @@ import cookie from './cookie';
  * @param {string} url 相对路径
  * @returns {String} 绝对地址
  */
-export function getAbsoluteUrl(url: string) {
+export function getAbsoluteUrl (url: string) {
     const a = document.createElement('a');
     a.href = url;
     return a.href;
