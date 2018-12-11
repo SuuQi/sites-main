@@ -51,3 +51,5 @@ export function downloadFile (url, filename = 'unname') {
 }
 
 export { cookie };
+
+export * from '../../common/utils';
