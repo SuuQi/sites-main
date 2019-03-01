@@ -8,6 +8,12 @@ export default (appInfo: EggAppInfo) => {
 
     config.keys = appInfo.name + '_1537442153535_79088';
 
+    config.security = {
+        csrf: {
+           enable: false
+        }
+    }
+
     config.ejs = {
         delimiter: '$'
     };

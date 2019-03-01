@@ -12,7 +12,10 @@ export default (app: any) => {
         books: [
             {
                 id: { type: 'string', required: true },
-                lastIndex: { type: 'number', default: 0 }
+                lastIndex: { type: 'number', default: 0 },
+                book: { type: 'string', required: true },
+                chaptersUpdated: { type: 'string', default: '' },
+                updated: { type: 'string', default: '' }
             }
         ]
     });
