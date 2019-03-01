@@ -4,6 +4,7 @@ import { checkUserMiddle } from '../utils';
 import { findIndex, remove } from 'lodash';
 
 export type IUserBookItem = {
+    title: string
     id: string
     book: string // 另一个id，未知含义
     chaptersUpdated: string // 最近更新时间 2018-02-06T12:12:47.907Z
