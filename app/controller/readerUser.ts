@@ -1,10 +1,13 @@
 import { Controller } from 'egg';
 import routerDecorator from 'egg-router-decorator';
 import { checkUserMiddle } from '../utils';
-import { findIndex } from 'lodash';
+import { findIndex, remove } from 'lodash';
 
-export type IBookItem = {
-    id: string,
+export type IUserBookItem = {
+    id: string
+    book: string // 另一个id，未知含义
+    chaptersUpdated: string // 最近更新时间 2018-02-06T12:12:47.907Z
+    updated: string // 最近更新时间 2018-02-06T12:12:47.907Z
     lastIndex: number
 }
 
@@ -26,12 +29,21 @@ export default class DachuiReaderController extends Controller {
         const { ctx } = this;
         const { user } = ctx.state;
         const book = ctx.request.body;
-        const bookIndex = findIndex<IBookItem>(user.books, { id: book.id });
+        const bookIndex = findIndex<IUserBookItem>(user.books, { id: book.id });
         if (bookIndex === -1) {
             user.books.push(book);
         } else {
             user[bookIndex] = book;
         }
+        await user.save();
+        ctx.body = user.books;
+    }
+
+    @routerDecorator.del('/bookshelf/:id')
+    public async bookselfDelete () {
+        const { ctx } = this;
+        const { user } = ctx.state;
+        remove<IUserBookItem>(user.books, { id: ctx.params.id })
         await user.save();
         ctx.body = user.books;
     }
