@@ -26,7 +26,7 @@ export default () => async function errorHandler (ctx, next) {
                 : err;
             ctx.status = err.status || 500;
         }
-
+        console.error(err);
         ctx.app.emit('error', err, ctx);
     }
 };

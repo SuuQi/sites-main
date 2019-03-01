@@ -12,6 +12,11 @@ export default class WechatController extends Controller {
     public async dachuiReaderLogin () {
         const { ctx, config } = this;
         const msg = await ctx.curl(`https://api.weixin.qq.com/sns/jscode2session?appid=${config.DACHUI_READER_APPID}&secret=${config.DACHUI_READER_SECRET}&js_code=${ctx.query.code}&grant_type=authorization_code`, { dataType: 'json' });
+        if (msg.data.errcode) {
+            // 微信出错
+            ctx.status = 403;
+            return;
+        }
         const { sessionId } = await ctx.model.ReaderUser.findOneAndUpdate({ openid: msg.data.openid }, {
             openid: msg.data.openid,
             sessionId: msg.data.session_key

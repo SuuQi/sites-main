@@ -1,9 +1,10 @@
 import { Controller } from 'egg';
 import routerDecorator from 'egg-router-decorator';
 import { checkUserMiddle } from '../utils';
-import { findIndex, remove } from 'lodash';
+import { findIndex, remove, assign } from 'lodash';
 
 export type IUserBookItem = {
+    title: string
     id: string
     book: string // 另一个id，未知含义
     chaptersUpdated: string // 最近更新时间 2018-02-06T12:12:47.907Z
@@ -32,7 +33,7 @@ export default class DachuiReaderController extends Controller {
         if (bookIndex === -1) {
             user.books.push(book);
         } else {
-            user[bookIndex] = book;
+            assign(user.books[bookIndex], book);
         }
         await user.save();
         ctx.body = user.books;
@@ -47,7 +48,7 @@ export default class DachuiReaderController extends Controller {
         if (bookIndex === -1) {
             // 没有加入过书架，不处理
         } else {
-            user[bookIndex] = book;
+            assign(user.books[bookIndex], book);
         }
         await user.save();
         ctx.body = user.books;

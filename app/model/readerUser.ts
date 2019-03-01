@@ -11,6 +11,7 @@ export default (app: any) => {
         sessionId: { type: 'string', required: true },
         books: [
             {
+                title: { type: 'string', required: true },
                 id: { type: 'string', required: true },
                 lastIndex: { type: 'number', default: 0 },
                 book: { type: 'string', required: true },
