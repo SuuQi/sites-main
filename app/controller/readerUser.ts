@@ -24,7 +24,6 @@ export default class DachuiReaderController extends Controller {
     }
 
     @routerDecorator.post('/bookshelf')
-    @routerDecorator.put('/bookshelf')
     public async bookselfAdd () {
         const { ctx } = this;
         const { user } = ctx.state;
@@ -32,6 +31,21 @@ export default class DachuiReaderController extends Controller {
         const bookIndex = findIndex<IUserBookItem>(user.books, { id: book.id });
         if (bookIndex === -1) {
             user.books.push(book);
+        } else {
+            user[bookIndex] = book;
+        }
+        await user.save();
+        ctx.body = user.books;
+    }
+
+    @routerDecorator.put('/bookshelf/:id')
+    public async bookselfUpdate () {
+        const { ctx } = this;
+        const { user } = ctx.state;
+        const book = ctx.request.body;
+        const bookIndex = findIndex<IUserBookItem>(user.books, { id: ctx.params.id });
+        if (bookIndex === -1) {
+            // 没有加入过书架，不处理
         } else {
             user[bookIndex] = book;
         }
