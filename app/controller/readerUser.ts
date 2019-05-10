@@ -1,6 +1,6 @@
 import { Controller } from 'egg';
 import routerDecorator from 'egg-router-decorator';
-import { checkUserMiddle } from '../utils';
+import { checkUserMiddleWare } from '../utils';
 import { findIndex, remove, assign } from 'lodash';
 
 export type IUserBookItem = {
@@ -15,7 +15,7 @@ export type IUserBookItem = {
 /**
  * 大锤阅读器相关接口
  */
-@routerDecorator.prefix('/reader', checkUserMiddle)
+@routerDecorator.prefix('/reader', checkUserMiddleWare)
 export default class DachuiReaderController extends Controller {
 
     @routerDecorator.get('/bookshelf')

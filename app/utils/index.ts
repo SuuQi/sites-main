@@ -1,5 +1,5 @@
 
-export async function checkUserMiddle (ctx, next) {
+export async function checkUserMiddleWare (ctx, next) {
     const sessionId = ctx.headers['x-reader-session'];
     if (!sessionId) {
         ctx.status = 401;
