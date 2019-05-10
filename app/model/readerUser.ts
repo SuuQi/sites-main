@@ -16,7 +16,9 @@ export default (app: any) => {
                 lastIndex: { type: 'number', default: 0 },
                 book: { type: 'string', required: true },
                 chaptersUpdated: { type: 'string', default: '' },
-                updated: { type: 'string', default: '' }
+                updated: { type: 'string', default: '' },
+                author: { type: 'string', required: true },
+                cover: { type: 'string', required: true }
             }
         ]
     });
