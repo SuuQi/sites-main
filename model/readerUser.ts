@@ -17,6 +17,7 @@ export default (app: any) => {
                 book: { type: 'string', required: true },
                 chaptersUpdated: { type: 'string', default: '' },
                 updated: { type: 'string', default: '' },
+                author: { type: 'string', required: true },
                 cover: { type: 'string', required: true }
             }
         ]
