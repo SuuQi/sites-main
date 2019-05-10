@@ -1,5 +1,11 @@
 
-export async function checkUserMiddleWare (ctx, next) {
+/**
+ * 检查reader是否登录的中间件
+ * @export
+ * @param {*} ctx
+ * @param {*} next
+ */
+export async function checkReaderUserMiddleWare (ctx, next) {
     const sessionId = ctx.headers['x-reader-session'];
     if (!sessionId) {
         ctx.status = 401;
