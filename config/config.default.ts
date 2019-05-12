@@ -10,8 +10,15 @@ export default (appInfo: EggAppInfo) => {
 
     config.security = {
         csrf: {
-           enable: false
-        }
+           enable: false,
+           ignoreJSON: true
+        },
+        domainWhiteList: ['*']
+    }
+
+    config.cors = {
+        origin: '*',
+        allowMethods: 'GET,HEAD,PUT,POST,DELETE,PATCH'
     }
 
     config.ejs = {

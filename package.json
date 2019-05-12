@@ -28,6 +28,7 @@
   "author": "15957136119@163.COM",
   "dependencies": {
     "egg": "^2.6.1",
+    "egg-cors": "^2.2.0",
     "egg-mongoose": "^3.1.0",
     "egg-router-decorator": "^2.1.0",
     "egg-scripts": "^2.6.0",
